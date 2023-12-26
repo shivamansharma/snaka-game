@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyChatApp</title>
+    <script defer src="socket.io/socket.io.js"></script>
+    <script defer src="./jsFolder/client.js"></script>
+    <style>
+        header {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+
+        }
+
+        #logo {
+            height: 50px;
+            border: 2px solid blue;
+            border-radius: 10px;
+        }
+
+        hr {
+            margin: 0%;
+            padding: 0%;
+            border-color: rgb(0, 0, 0);
+        }
+
+        .MyHeading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(70, 24, 210);
+            font-weight: 900;
+            height: 30px;
+            border: 2px solid red;
+            border-radius: 10px;
+            background-color: rgba(59, 63, 54, 0.628);
+            ;
+
+        }
+
+        .container {
+            display: block;
+            margin: auto;
+            width: 50%;
+            /* height: px; */
+            border: 2px solid red;
+            border-radius: 10px;
+            overflow: auto;
+        }
+
+        .mymargin {
+            margin: 10px 0px;
+        }
+
+        .message {
+            border: 1px solid black;
+            padding: 2px 5px;
+            margin: 3px;
+            border-radius: 5px;
+            background-color: aquamarine;
+            font-weight: 400;
+        }
+
+        .left {
+            float: left;
+            clear: both;
+        }
+
+        .right {
+            float: right;
+            clear: both;
+        }
+
+        .center {
+            display: block;
+            margin: auto;
+            padding: 0px;
+            /* margin: 0; */
+            text-align: center;
+            width: 200px;
+            color: white;
+            background-color: brown;
+            clear: both;
+        }
+
+        #messagebox {
+            background-color: #444450;
+            height: 500px;
+            overflow: auto;
+            padding: 5px;
+
+        }
+
+        form {
+            /* display: block;
+            margin: auto;
+            width: 50%; */
+            /* height: 50px; */
+            /* border: 2px solid red; */
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            align-items: flex-end;
+            position: sticky;
+            bottom: 0;
+            height: 30px;
+
+
+        }
+
+        .mesaagesendbox {
+            position: sticky;
+            bottom: 0;
+            background-color: rgb(36, 36, 41);
+            padding-bottom: 3px;
+            box-shadow: 0px 5px 7px 15px rgb(69, 68, 68);
+
+        }
+
+        #send_msg {
+            width: 100%;
+            margin: 0%;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding-left: 10px;
+            height: 20px;
+            font-weight: bolder;
+        }
+
+        #sendbtn {
+            width: 70px;
+            margin: 0%;
+            height: 25px;
+            border-radius: 10px;
+            border: 1px solid black;
+
+        }
+
+        #sendbtn:hover {
+            background-color: black;
+            color: white;
+            font-weight: 500px;
+        }
+
+        ::-webkit-scrollbar {
+            width: 20px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #d6dee1;
+            border-radius: 20px;
+            border: 6px solid transparent;
+            background-clip: content-box;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #21282a;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="./images/chat-messaging-app-logo-design-vector-21795804 (1).jpg" alt="logo" id="logo">
+    </header>
+    <div class="mymargin"></div>
+    <!-- <div class="mymargin"></div> -->
+
+    <div class="container">
+        <div class="MyHeading">My chat App</div>
+
+        <hr>
+        <div id="messagebox">
+        </div>
+        <hr>
+        <!-- <div class="mymargin"></div> -->
+        <div class="mesaagesendbox">
+            <form action="#" id="sendcont">
+                <input type="text" name="send_msg" id="send_msg">
+                <button id="sendbtn">send</button>
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+    var element = document.getElementById('messagebox');
+    element.scrollTop = element.scrollHeight;
+</script>
+
+</html>
